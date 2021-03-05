@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="child-content">
+    <div class="contact-tile" *ngFor="let contact of contacts; index as ind">
+      <h1>Contact {{ind+1}}</h1>
+      <label>FirstName: </label><span>{{contact.FirstName}}</span><br>
+      <label>LastName: </label><span>{{contact.LastName}}</span><br>
+      <label>Phone: </label><span>{{contact.Phone}}</span><br>
+      <label>Email: </label><span>{{contact.Email}}</span><br>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div [ngClass]="{'popup-displayed': displayProd}">
+  <app-header (searchString)="findProductBySearchString($event)" (isUserSearched)="isUserSearchedHandler($event)"
+    (searchProduct)="searchedProduct($event)"></app-header>
+
+  <div class="main-content">
+    <div class="left-pane">
+      <app-filter (appliedFilterValue)="handleFilter($event)"></app-filter>
+    </div>
+    <div class="right-pane">
+      <app-list-products (displayProd)="displayPopup($event)"></app-list-products>
+    </div>
+  </div>
+</div>
+
+
+<ng-container *ngIf="displayProd">
+
+  <div class="pop-up">
+    <div class="popup-content" *ngFor="let prod of selectedProduct">
+      <app-product-popup [pdt]="prod" (closePopupDisplay)="closePopup($event)"></app-product-popup>
+    </div>
+  </div>
+
+</ng-container> -->

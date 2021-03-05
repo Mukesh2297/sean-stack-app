@@ -1,0 +1,9 @@
+.cart-content {
+  height: 300px;
+  width: 500px;
+  display: flex;
+}
+
+mat-toolbar {
+  height: 60px;
+}

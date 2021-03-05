@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  MY APP
+
+  <div class="search">
+    <input type="text" matInput name="search" id="input-search" placeholder="Search products"
+      (change)="searchProduct($event)" #searchInput />
+    <button type="button" class="search-btn" mat-raised-button color="accent">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+  <div class="cart">
+    <div class="cart-btn">
+      <a routerLink='/cart' mat-stroked-button >
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+    </div>
+  </div>
+</mat-toolbar>

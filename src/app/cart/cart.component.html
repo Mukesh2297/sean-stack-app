@@ -1,0 +1,14 @@
+<mat-toolbar color="accent">My Cart</mat-toolbar>
+<div class="container">
+    <div class="cart">
+        <div class="cart-content" *ngFor="let pdt of cartProd">
+            <div class="cart-img">
+                <img [src]="pdt.imageSource" alt="cart-image" style="width: 200px;" height="200px">
+            </div>
+            <div class="cart-def">
+                <h2> {{pdt.productTitle}}</h2>
+                <h3>Total:{{numberConversion(pdt.productPrice) * pdt.quantity }}</h3>
+            </div>
+        </div>
+    </div>
+</div>

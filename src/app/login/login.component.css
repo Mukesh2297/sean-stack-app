@@ -1,0 +1,247 @@
+.container{
+    width:100%;
+    height:100%;
+}
+
+mat-form-field
+{
+    width: 250px;
+}
+
+.child-content{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.app-info{
+    width: 65%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:rgba(255, 221, 3, 1);
+}
+
+.app-login-section{
+    width: 35%;
+    height: 100%;
+    background-color: rgba(241, 250, 238, 1);
+    opacity: 100%;
+}
+
+.login-highlight{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.highlighter{
+    width: 40%;
+    height: 300px;
+    background-color: rgba(233, 105, 112, 1);
+}
+
+.login-signup-section{
+    width: 30%;
+    height:86%;
+    background-color:#427697;
+    color:whitesmoke;
+    position: absolute;
+    top: 40px;
+    right: 25px;
+
+}
+
+.login-contents{
+    padding:30px 0px 0px 75px;
+}
+
+.submitBtn{
+    padding-left:100px;
+}
+
+.app-header{
+    font-weight: bolder;
+    font-size: 2.2rem;
+    color:#4D4D4D;
+    padding-top: 34px;
+    padding-left: 34px;
+}
+
+.login-header{
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.login-contents p{
+    font-size: medium;
+}
+
+.toggle-btn{
+    color:#ffd740;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.error-box p
+{
+    color: #f44336;
+    margin-top: -15px;
+}
+
+.social-share{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.link-section img{
+    height: 45px;
+    width: 45px;
+    padding: 15px 18px 0px 0px;
+    
+}
+
+.carousel-img{
+    height: 250px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 70%;
+    border-radius: 30px;
+}
+
+/* .carousel-section{
+    padding: 70px 0px 0px 0px;
+} */
+
+.offer-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer-info{
+    height: 70px;
+    width: 440px;
+    background-color:rgb(255, 237, 117);
+}
+
+.offer-info p{
+    padding:25px;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    color:#4D4D4D;
+
+}
+
+.offer-month{
+    height: 70px;
+    width: 440px;
+    padding-top: 15px;
+}
+
+.offer-month p{
+    padding-left: 90px;
+    font-weight: bolder;
+    font-size: 2.2rem;
+    color:#4D4D4D;
+}
+
+
+.footer{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    opacity: 80%;
+}
+
+.footer-content{
+    width: 25%;
+    background-color: black;
+    color: white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    text-align: center;
+    padding: 5px;
+}
+
+.footer-content a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+@media (min-width:320px) and (max-width:480px)
+{
+
+    .app-name{
+        font-size: xx-large;
+        font-weight: 600;
+        padding: 50px 0px 0px 40px;
+    }
+
+    .app-login-section
+    {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(241, 250, 238, 1);
+    opacity: 100%;
+    }
+
+    .login-section{
+        width: 90%;
+        height:95%;
+        background-color:#427697;
+        color:whitesmoke;
+        position: absolute;
+        top: 20px;
+        right: 18px;
+    
+    }
+
+    
+    .login-contents{
+        padding: 30px 40px 40px;
+    }
+
+    .offers{
+        width: 100%;
+        height: 110px;
+        background-color: #FFDD03;
+        text-align: center;
+        color:#4D4D4D;
+        border-radius: 15px;
+    }
+
+    .offers p{
+        padding-top:25px;
+        font-weight: bold;
+        
+    }
+
+    .offer-date{
+        font-size: xx-large;
+        font-weight: bold;
+    }
+
+    .login-signup-section{
+        width: 85%;
+        height:86%;
+        background-color:#427697;
+        color:whitesmoke;
+        position: absolute;
+        top: 40px;
+        right: 25px;   
+    }
+    
+}
+
+

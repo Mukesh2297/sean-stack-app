@@ -1,0 +1,66 @@
+.container {
+  height: 450px;
+  width: 398px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.product-info {
+  width: inherit;
+}
+
+.close {
+  width: inherit;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.product {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout {
+  display: flex;
+  justify-self: flex-start;
+  padding-top: 46px;
+}
+
+.checkout button {
+  height: 40px;
+  width: 398px;
+  border: none;
+  cursor: pointer;
+  background-color: #f4d078;
+  outline: none;
+}
+
+.close-btn button:hover {
+  background-color: lightcoral;
+}
+
+.product-tile {
+  height: 280px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+/* Add some padding inside the card container */
+.product-tile-container {
+  text-align: center;
+  padding: 5px;
+}
+
+.checkout-btn h3 {
+  padding: 5px;
+}

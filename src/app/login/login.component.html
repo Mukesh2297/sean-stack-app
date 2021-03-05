@@ -1,0 +1,209 @@
+<ng-container *ngIf="!mobileDevice else notAMobileDevice">
+<div class="container">
+    <div class="child-content">
+        <div class="app-info">
+            <div class="header">
+                <h1 class="app-header">Mom & Pop</h1>
+            </div>
+            <div class="carousel-section">
+                <carousel [images]="images" [height]="200" [cellWidth]="50"  [borderRadius]="15" [autoplay]=true [autoplayInterval]="2000" [overflowCellsLimit]="2" [cellsToShow]="2" [transitionDuration]="300" [transitionTimingFunction]="'ease-in-out'" [loop]=true [arrows]=false >
+                </carousel>    
+            </div>
+            <div class="offer-box">
+                <div class="offer-info">
+                    <p>New Year Offers From</p>
+                    <div class="offer-month">
+                        <p>{{date}}</p>
+                    </div>
+                </div>
+                <div class="sale-info">
+                    <img src="../../assets/Big sale.png" width="200px" height="200px">
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-content">
+                    <a href="">Mom&Pop.in</a>
+                </div>
+                <div class="footer-content">
+                    <a href="">Payments</a>
+                </div>
+                <div class="footer-content">
+                    <a href="">24/7*Customer Support</a>
+                </div>
+                <div class="footer-content">
+                    <a href="">Know More About Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="app-login-section">
+            <div class="login-highlight">
+                <div class="highlighter"></div>
+            </div>
+            <div class="login-signup-section" *ngIf="showLogin;else signupSection ">
+                <div class="login-contents">
+                    <h2 class="login-header">Login</h2>
+                    <p>Enter your details below to continue</p>
+                    <br>
+                    <form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
+                    <mat-form-field>
+                        <input type="email" matInput placeholder="Username" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel #loginUsername="ngModel">
+                        <mat-icon matSuffix color="accent">person</mat-icon> 
+                    </mat-form-field>
+                    <div class="error-box" *ngIf="!loginUsername.valid && loginUsername.touched">
+                        <p>Please enter your registered email Id</p>
+                    </div>
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Password" required  minlength="8" name="password" ngModel #loginPassword="ngModel">
+                    </mat-form-field>
+                    <div class="error-box" *ngIf="!loginPassword.valid && loginPassword.touched">
+                        <p>Please enter valid password</p>
+                    </div>
+                    <br>
+                    <div class="submitBtn">
+                        <button  mat-raised-button color="accent" type="submit" [disabled]="!loginForm.valid" >LOGIN</button>
+                    </div>
+                    </form>
+                    <br>
+                    <br>
+                    <p>Don't have an account?&nbsp;<a class="toggle-btn" href="javascript:void(0);" (click)="toggleSignUpLogin()" >Sign up here</a></p>
+                </div>
+            </div>
+            <ng-template #signupSection>
+                <div class="login-signup-section">
+                    <div class="login-contents">
+                        <h2 class="login-header">Signup</h2>
+                        <p>Enter your details below to continue</p>
+                        <br>
+                        <form (ngSubmit)="signup(signupForm)" #signupForm="ngForm">
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="FirstName" required minlength="3" maxlength="50" name="fname" ngModel #firstName="ngModel">
+                            <mat-icon matSuffix color="accent">person</mat-icon> 
+                        </mat-form-field>
+                        <div class="error-box" *ngIf="!firstName.valid && firstName.touched">
+                            <p>Please enter a valid firstname</p>
+                        </div>
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="LastName" required minlength="3" maxlength="50" name="lname" ngModel #lastName="ngModel">
+                        </mat-form-field>
+                        <div class="error-box" *ngIf="!lastName.valid && lastName.touched">
+                            <p>Please enter a valid lastname</p>
+                        </div>
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Password" required minlength="8" name="password" ngModel #password="ngModel">
+                        </mat-form-field>
+                        <div class="error-box" *ngIf="!password.valid && password.touched">
+                            <p>Please enter a valid password with a minimum length of 8 characters</p>
+                        </div>
+                        <mat-form-field>
+                            <input type="email" matInput placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" ngModel #email="ngModel">
+                        </mat-form-field>
+                        <div class="error-box" *ngIf="!email.valid && email.touched">
+                            <p>Please enter a valid email</p>
+                        </div>
+                        <mat-form-field>
+                            <input type="tel" matInput placeholder="Phone" required minlength="10" name="phone" ngModel #phone="ngModel">
+                        </mat-form-field>
+                        <div class="error-box" *ngIf="!phone.valid && phone.touched">
+                            <p>Please enter a valid phone number</p>
+                        </div>
+                        <br>
+                        <div class="submitBtn">
+                            <button  mat-raised-button color="accent" type="submit"  [disabled]="!signupForm.valid"  >SIGNUP</button>
+                        </div>
+                        </form>
+                        <br>
+                        <br>
+                        <p>Click here to login?&nbsp;<a class="toggle-btn" href="javascript:void(0);" (click)="toggleSignUpLogin()" >Login</a></p>
+                    </div>
+                </div>
+            </ng-template>
+        </div> 
+    </div>
+</div>
+</ng-container>
+<ng-template #notAMobileDevice>
+    <div class="app-login-section">
+        <div class="login-highlight">
+            <div class="highlighter"></div>
+        </div>
+        <div class="login-section" *ngIf="showLogin; else signupMobileView">
+            <h1 class="app-name">Mom & Pop</h1>
+            <div class="login-contents">
+
+                <div class="offers">
+                    <p><span>Diwali Damakas from</span> 
+                    </p>
+                    <span class="offer-date">{{date}}</span>
+                </div>
+                <br>
+                <h2 class="login-header">Login</h2>
+                <p>Enter your details below to continue</p>
+                <br>
+                <form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Username" required name="email" ngModel>
+                    <mat-icon matSuffix color="accent">person</mat-icon> 
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password" required name="password" ngModel>
+                </mat-form-field>
+                <br>
+                <div class="submitBtn">
+                    <button  mat-raised-button color="accent" type="submit"  >LOGIN</button>
+                </div>
+                </form>
+                <br>
+                <br>
+                <p>Don't have an account?&nbsp;<a class="toggle-btn" href="javascript:void(0);" (click)="toggleSignUpLogin()" >Sign up here</a></p>
+            </div>
+        </div>
+        <ng-template #signupMobileView>
+            <div class="login-signup-section">
+                <div class="login-contents">
+                    <h2 class="login-header">Signup</h2>
+                    <p>Enter your details below to continue</p>
+                    <br>
+                    <form (ngSubmit)="signup(signupForm)" #signupForm="ngForm">
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="FirstName" required minlength="3" maxlength="50" name="fname" ngModel #firstName="ngModel">
+                        <mat-icon matSuffix color="accent">person</mat-icon> 
+                    </mat-form-field>
+                    <div class="error-box" *ngIf="!firstName.valid && firstName.touched">
+                        <p>Please enter a valid username</p>
+                    </div>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="LastName" required name="lname" ngModel #lastName="ngModel">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Password" required name="password" ngModel #password="ngModel">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="email" matInput placeholder="Email" required name="email" ngModel #email="ngModel">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="tel" matInput placeholder="Phone" required name="phone" ngModel #phone="ngModel">
+                    </mat-form-field>
+                    <br>
+                    <div class="submitBtn">
+                        <button  mat-raised-button color="accent" type="submit"  >SIGNUP</button>
+                    </div>
+                    </form>
+                    <br>
+                    <br>
+                    <p>Click here to login?&nbsp;<a class="toggle-btn" href="javascript:void(0);" (click)="toggleSignUpLogin()" >Login</a></p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
